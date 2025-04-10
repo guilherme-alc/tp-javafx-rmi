@@ -54,7 +54,7 @@ public class LoginController {
         }
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/tela-emails.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/tela-emails.fxml"));
             Parent root = loader.load();
 
             Stage stage = new Stage();
@@ -103,7 +103,7 @@ public class LoginController {
     @FXML
     protected void abrirTelaCadastro(ActionEvent event) throws IOException {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/tela-cadastro.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/tela-cadastro.fxml"));
             Parent root = loader.load();
 
             Stage stage = new Stage();

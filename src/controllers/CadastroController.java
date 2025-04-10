@@ -92,7 +92,7 @@ public class CadastroController {
     @FXML
     protected void abrirTelaLogin(ActionEvent event) throws IOException {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/tela-login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/tela-login.fxml"));
             Parent root = loader.load();
 
             Stage stage = new Stage();
