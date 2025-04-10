@@ -60,14 +60,14 @@ public class LoginController {
             Stage stage = new Stage();
             stage.setTitle("Caixa de Entrada");
 
-            stage.setWidth(558);
-            stage.setHeight(458);
+            stage.setWidth(788);
+            stage.setHeight(587);
 
-            stage.setMinWidth(558);
-            stage.setMinHeight(458);
+            stage.setMinWidth(788);
+            stage.setMinHeight(587);
 
-            stage.setMaxWidth(558);
-            stage.setMaxHeight(458);
+            stage.setMaxWidth(788);
+            stage.setMaxHeight(587);
 
             stage.setScene(new Scene(root));
             stage.show();
