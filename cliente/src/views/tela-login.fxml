@@ -17,18 +17,36 @@
     </padding>
    <AnchorPane maxHeight="458.0" maxWidth="558.0" minHeight="458.0" minWidth="558.0" prefHeight="458.0" prefWidth="558.0">
       <children>
-         <Text layoutX="140.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="384.876953125" />
-         <TextField fx:id="campoEmail" layoutX="140.0" layoutY="149.0" prefHeight="25.0" prefWidth="188.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" />
-         <Text layoutX="140.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" />
-          <PasswordField fx:id="campoSenha" layoutX="140.0" layoutY="204.0" prefHeight="25.0" prefWidth="278.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" />
-          <Button contentDisplay="CENTER" layoutX="190.0" layoutY="252.0" onAction="#fazerLogin" prefHeight="25.0" prefWidth="87.0" text="Entrar" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="191.0" />
-         <Text layoutX="252.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" AnchorPane.leftAnchor="252.0" AnchorPane.rightAnchor="252.796875">
+         <Text layoutX="140.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="384.876953125">
             <font>
-               <Font name="Calibri Bold" size="24.0" />
+               <Font name="System Bold" size="16.0" />
+            </font></Text>
+         <TextField fx:id="campoEmail" layoutX="140.0" layoutY="158.0" prefHeight="25.0" prefWidth="188.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0">
+            <font>
+               <Font size="14.0" />
+            </font></TextField>
+         <Text layoutX="140.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="372.853125">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font></Text>
+          <PasswordField fx:id="campoSenha" layoutX="140.0" layoutY="230.0" prefHeight="25.0" prefWidth="278.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0">
+            <font>
+               <Font size="14.0" />
+            </font></PasswordField>
+          <Button contentDisplay="CENTER" defaultButton="true" layoutX="190.4" layoutY="270.0" onAction="#fazerLogin" prefHeight="25.0" prefWidth="87.0" text="Entrar" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0">
+            <font>
+               <Font size="16.0" />
+            </font></Button>
+         <Text fill="#ff5900" layoutX="252.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" AnchorPane.leftAnchor="252.0" AnchorPane.rightAnchor="252.0">
+            <font>
+               <Font name="System Bold" size="24.0" />
             </font>
          </Text>
          <Label fx:id="labelFeedback" alignment="CENTER" layoutX="151.0" layoutY="338.0" prefHeight="23.0" prefWidth="255.0" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="152.0" />
-          <Hyperlink layoutX="245.0" layoutY="292.0" onAction="#abrirTelaCadastro" prefHeight="23.0" prefWidth="68.0" text="Criar conta" AnchorPane.leftAnchor="245.0" AnchorPane.rightAnchor="245.0" />
+          <Hyperlink alignment="CENTER" layoutX="140.0" layoutY="317.0" onAction="#abrirTelaCadastro" prefHeight="34.0" prefWidth="278.0" text="Criar conta" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0">
+            <font>
+               <Font size="16.0" />
+            </font></Hyperlink>
       </children>
    </AnchorPane>
 </VBox>

@@ -3,26 +3,49 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="587.0" maxWidth="788.0" minHeight="587.0" minWidth="788.0" prefHeight="587.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EmailsController">
+<AnchorPane maxHeight="617.0" maxWidth="788.0" minHeight="587.0" minWidth="788.0" prefHeight="617.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/21.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EmailsController">
    <children>
-   <ListView fx:id="listMensagensRecebidas" layoutX="9.0" prefHeight="548.0" prefWidth="214.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="29.0" />
-      <Label fx:id="labelRemetente" layoutX="303.0" layoutY="14.0" prefHeight="17.0" prefWidth="472.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0" />
-      <TextArea fx:id="campoMensagemRecebida" layoutX="231.0" layoutY="40.0" prefHeight="130.0" prefWidth="549.0" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="10.0" />
-      <TextField fx:id="campoAssunto" layoutX="288.8" layoutY="189.0" prefHeight="26.0" prefWidth="486.0" AnchorPane.leftAnchor="289.0" AnchorPane.rightAnchor="10.0" />
-      <TextArea fx:id="campoConteudo" layoutX="232.0" layoutY="244.0" maxHeight="268.0" maxWidth="546.0" minHeight="268.0" minWidth="546.0" prefHeight="268.0" prefWidth="546.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="244.0" />
-      <TextField fx:id="campoDestinatario" layoutX="303.2" layoutY="527.0" prefHeight="25.0" prefWidth="301.0" AnchorPane.bottomAnchor="34.4" AnchorPane.leftAnchor="303.2" AnchorPane.rightAnchor="78.40000000000009" />
-      <Button fx:id="enviarEmail" layoutX="720.0" layoutY="527.0" mnemonicParsing="false" onAction="#enviarMensagem" prefHeight="25.0" prefWidth="57.0" text="Enviar" AnchorPane.bottomAnchor="34.4" AnchorPane.rightAnchor="10.0" />
-      <Label fx:id="feedbackEnvio" alignment="CENTER" layoutX="232.0" layoutY="561.0" prefHeight="18.0" prefWidth="546.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="10.0" />
-      <Label layoutX="232.0" layoutY="193.0" text="Assunto:" AnchorPane.leftAnchor="232.0" />
-      <Label layoutX="232.0" layoutY="531.0" text="Destinatário:" AnchorPane.bottomAnchor="38.4" AnchorPane.leftAnchor="232.0" />
-      <Separator layoutX="231.0" layoutY="177.0" prefHeight="4.0" prefWidth="447.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="8.0" />
-      <Label layoutX="232.0" layoutY="222.6" text="Conteúdo:" AnchorPane.leftAnchor="232.0" AnchorPane.topAnchor="222.6" />
-      <Label layoutX="231.0" layoutY="14.0" text="Remetente:" AnchorPane.leftAnchor="232.0" AnchorPane.topAnchor="20.0" />
-      <Label layoutX="14.0" layoutY="6.0" text="Caixa de Entrada" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+	  <Label layoutX="10.4" layoutY="33.4" text="Caixa de Entrada" textFill="#ff5900" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="33.4">
+	    <font>
+	        <Font name="System Bold" size="14.0" />
+	    </font>
+	  </Label>
+   	<ListView fx:id="listMensagensRecebidas" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="563.0" AnchorPane.topAnchor="60.0" />
+      <Label fx:id="labelRemetente" layoutX="302.0" layoutY="60.0" prefHeight="17.0" prefWidth="472.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="60.0" />
+      <TextArea fx:id="campoMensagemRecebida" layoutX="232.0" layoutY="84.0" maxHeight="143.0" maxWidth="546.0" minHeight="143.0" minWidth="546.0" prefHeight="143.0" prefWidth="546.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="10.0" />
+      <TextField fx:id="campoAssunto" layoutX="292.0" layoutY="250.0" prefHeight="26.0" prefWidth="486.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="10.399999999999977" />
+      <TextArea fx:id="campoConteudo" layoutX="235.2" layoutY="304.0" maxHeight="268.0" maxWidth="546.0" minHeight="238.0" minWidth="543.0" prefHeight="238.0" prefWidth="543.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="235.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="304.0" />
+      <TextField fx:id="campoDestinatario" layoutX="310.4" layoutY="553.6" prefHeight="26.0" prefWidth="400.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="310.4" AnchorPane.rightAnchor="78.39999999999998" />
+      <Button fx:id="enviarEmail" defaultButton="true" layoutX="720.0" layoutY="554.4" mnemonicParsing="false" onAction="#enviarMensagem" prefHeight="25.0" prefWidth="57.0" text="Enviar" AnchorPane.bottomAnchor="37.0" AnchorPane.rightAnchor="10.399999999999977" />
+      <Label fx:id="feedbackEnvio" alignment="CENTER" layoutX="234.4" layoutY="588.4" prefHeight="18.0" prefWidth="546.0" AnchorPane.bottomAnchor="10.200000000000045" AnchorPane.leftAnchor="234.4" AnchorPane.rightAnchor="10.399999999999977" />
+      <Label layoutX="234.4" layoutY="254.0" text="Assunto:" AnchorPane.leftAnchor="234.4" />
+      <Label layoutX="234.4" layoutY="557.6" text="Destinatário:" AnchorPane.bottomAnchor="41.799999999999955" AnchorPane.leftAnchor="234.4" />
+      <Separator layoutX="234.4" layoutY="238.0" prefHeight="4.0" prefWidth="447.0" AnchorPane.leftAnchor="234.4" AnchorPane.rightAnchor="10.399999999999977" />
+      <Label layoutX="234.4" layoutY="285.0" text="Conteúdo:" AnchorPane.leftAnchor="234.4" AnchorPane.topAnchor="285.0" />
+      <Label layoutX="231.4" layoutY="60.0" text="Remetente:" AnchorPane.leftAnchor="234.0" AnchorPane.topAnchor="60.0" />
+      <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="788.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Opções">
+          	<items>
+              <MenuItem mnemonicParsing="false" text="Recarregar" />
+            </items>
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#fazerLogout" text="Fazer logout" />
+            </items>
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#encerrarAplicacao" text="Sair" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </AnchorPane>

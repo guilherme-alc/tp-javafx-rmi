@@ -11,19 +11,43 @@
 
 <AnchorPane maxHeight="458.0" maxWidth="558.0" minHeight="458.0" minWidth="558.0" prefHeight="458.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/21.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadastroController">
    <children>
-      <Text layoutX="189.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de conta" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="188.58984375">
+      <Text fill="#ff5900" layoutX="189.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de conta" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0">
          <font>
-            <Font name="Calibri Bold" size="24.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <Text layoutX="189.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Completo" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="280.962890625" />
-      <TextField fx:id="campoNome" layoutX="189.0" layoutY="125.0" prefHeight="25.0" prefWidth="180.0" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="189.0" />
-      <Text layoutX="188.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:" AnchorPane.leftAnchor="188.0" />
-      <TextField fx:id="campoEmail" layoutX="189.0" layoutY="188.0" prefHeight="25.0" prefWidth="180.0" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="189.0" />
-      <Text layoutX="187.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="338.662109375" />
-      <PasswordField fx:id="campoSenha" layoutX="187.0" layoutY="252.0" prefHeight="25.0" prefWidth="180.0" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="189.0" />
-      <Button fx:id="botaoCadastrar" layoutX="191.0" layoutY="308.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="25.0" prefWidth="180.0" text="Cadastrar" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="189.0" />
+      <Text layoutX="148.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Completo" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="286.296875">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Text>
+      <TextField fx:id="campoNome" layoutX="150.4" layoutY="133.0" prefHeight="30.0" prefWidth="218.0" AnchorPane.leftAnchor="150.4" AnchorPane.rightAnchor="150.39999999999998">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Text layoutX="150.4" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="360.25625">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Text>
+      <TextField fx:id="campoEmail" layoutX="150.4" layoutY="207.0" prefHeight="25.0" prefWidth="180.0" AnchorPane.leftAnchor="150.4" AnchorPane.rightAnchor="150.39999999999998">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Text layoutX="150.4" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="362.053125">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Text>
+      <PasswordField fx:id="campoSenha" layoutX="150.4" layoutY="277.0" prefHeight="25.0" prefWidth="180.0" AnchorPane.leftAnchor="150.4" AnchorPane.rightAnchor="150.39999999999998">
+         <font>
+            <Font size="14.0" />
+         </font></PasswordField>
+      <Button fx:id="botaoCadastrar" defaultButton="true" layoutX="188.8" layoutY="328.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="25.0" prefWidth="180.0" text="Cadastrar" AnchorPane.leftAnchor="188.8" AnchorPane.rightAnchor="188.8">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
       <Label fx:id="labelFeedback" alignment="CENTER" layoutX="145.0" layoutY="354.0" prefHeight="17.0" prefWidth="268.0" style="-fx-text-fill: green;" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="145.0" />
-      <Hyperlink alignment="CENTER" onAction="#abrirTelaLogin" layoutX="245.0" layoutY="390.0" text="Fazer Login" AnchorPane.leftAnchor="245.0" AnchorPane.rightAnchor="244.0" />
+      <Hyperlink alignment="CENTER" layoutX="187.2" layoutY="375.0" onAction="#abrirTelaLogin" prefHeight="34.0" prefWidth="180.0" text="Fazer Login" AnchorPane.leftAnchor="187.2" AnchorPane.rightAnchor="191.2">
+         <font>
+            <Font size="16.0" />
+         </font></Hyperlink>
    </children>
 </AnchorPane>
