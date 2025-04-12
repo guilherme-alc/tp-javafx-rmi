@@ -46,31 +46,32 @@ public class LoginController {
                 labelFeedback.setText("Usuário não cadastrado, ou login está incorreto");
                 labelFeedback.setStyle("-fx-text-fill: red;");
                 return;
-        	}
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/tela-emails.fxml"));
-                Parent root = loader.load();
-                
-                EmailsController controller = loader.getController();
-                controller.setEmailService(emailService);
-                controller.setUsuario(usuario);
+    		}
+        	
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/tela-emails.fxml"));
+            Parent root = loader.load();
+            
+            EmailsController controller = loader.getController();
+            controller.setEmailService(emailService);
+            controller.setUsuario(usuario);
 
-                Stage stage = new Stage();
-                stage.setTitle("Caixa de Entrada");
+            Stage stage = new Stage();
+            stage.setTitle("Caixa de Entrada");
 
-                stage.setWidth(788);
-                stage.setHeight(587);
+            stage.setWidth(788);
+            stage.setHeight(587);
 
-                stage.setMinWidth(788);
-                stage.setMinHeight(587);
+            stage.setMinWidth(788);
+            stage.setMinHeight(587);
 
-                stage.setMaxWidth(788);
-                stage.setMaxHeight(587);
+            stage.setMaxWidth(788);
+            stage.setMaxHeight(587);
 
-                stage.setScene(new Scene(root));
-                stage.show();
+            stage.setScene(new Scene(root));
+            stage.show();
 
-                Stage telaLogin = (Stage) campoEmail.getScene().getWindow();
-                telaLogin.close();
+            Stage telaLogin = (Stage) campoEmail.getScene().getWindow();
+            telaLogin.close();
 
     	}catch(IOException ex) {
         	ex.printStackTrace();
