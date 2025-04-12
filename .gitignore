@@ -1,0 +1,54 @@
+# ============================
+# Eclipse & Java Projects
+# ============================
+
+# Eclipse project files
+*.classpath
+*.project
+*.settings/
+
+# Build output
+bin/
+build/
+target/
+out/
+
+# Maven (caso algum projeto passe a usar)
+.mvn/
+!**/src/main/**
+!**/src/test/**
+dependency-reduced-pom.xml
+release.properties
+releases/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+test-output/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Java language server (caso use VSCode em algum momento)
+.projectile
+.vscode/
+.apt_generated/
+.factorypath
+
+# Backup & temp files
+*.bak
+*.swp
+*.tmp
+*.~*
+
+# IntelliJ IDEA (caso alguém use também)
+.idea/
+*.iml
+*.iws
