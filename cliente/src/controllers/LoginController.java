@@ -54,6 +54,7 @@ public class LoginController {
             EmailsController controller = loader.getController();
             controller.setEmailService(emailService);
             controller.setUsuario(usuario);
+            controller.receberMensagens();
 
             Stage stage = new Stage();
             stage.setTitle("Caixa de Entrada");

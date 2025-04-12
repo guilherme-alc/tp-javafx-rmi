@@ -1,8 +1,12 @@
 package controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,10 +34,13 @@ public class EmailsController {
     @FXML
     private Label labelRemetente;
     @FXML
+    private TextArea campoMensagemRecebida;
+    @FXML
     private ListView listMensagensRecebidas;
     
     private EmailInterface emailService;
     private Usuario usuario;
+    private List<Mensagem> mensagensRecebidas = new ArrayList<>();
     
     public void setEmailService(EmailInterface emailService) {
         this.emailService = emailService;
@@ -41,6 +48,49 @@ public class EmailsController {
     
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+    
+    @FXML
+    public void initialize() {
+
+        Thread recarrega = new Thread(new Runnable() {
+        	
+            @Override
+            public void run() {
+            	
+                try {
+
+                    Thread.sleep(15000); // 15 segundos
+
+                    while (true) {
+                    	
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                receberMensagens();
+                            }
+                        });
+                        
+                        Thread.sleep(30000);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        recarrega.setDaemon(true);
+        recarrega.start();
+
+        //seleção de mensagem na lista
+        listMensagensRecebidas.setOnMouseClicked(event -> {
+            int indice = listMensagensRecebidas.getSelectionModel().getSelectedIndex();
+            if (indice >= 0 && indice < mensagensRecebidas.size()) {
+                Mensagem mensagem = mensagensRecebidas.get(indice);
+                labelRemetente.setText(mensagem.remetente);
+                campoMensagemRecebida.setText(mensagem.conteudo);
+            }
+        });
     }
     
     @FXML
@@ -76,6 +126,26 @@ public class EmailsController {
         	ex.printStackTrace();
         }  
     }
+    
+    @FXML
+    protected void receberMensagens() {
+    	try {
+    		mensagensRecebidas = emailService.receberNotificacao(usuario.email);
+    		List<String> assuntos = new ArrayList<>();
+    		
+    		for(Mensagem mensagem : mensagensRecebidas) {
+    			assuntos.add(mensagem.assunto);
+    		}
+    		
+    		ObservableList<String> itens = FXCollections.observableArrayList(assuntos);
+    		listMensagensRecebidas.setItems(itens);
+    		
+    		
+    	} catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     
     @FXML
     protected void encerrarAplicacao() {

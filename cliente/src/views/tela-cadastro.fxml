@@ -44,8 +44,8 @@
          <font>
             <Font size="16.0" />
          </font></Button>
-      <Label fx:id="labelFeedback" alignment="CENTER" layoutX="145.0" layoutY="354.0" prefHeight="17.0" prefWidth="268.0" style="-fx-text-fill: green;" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="145.0" />
-      <Hyperlink alignment="CENTER" layoutX="187.2" layoutY="375.0" onAction="#abrirTelaLogin" prefHeight="34.0" prefWidth="180.0" text="Fazer Login" AnchorPane.leftAnchor="187.2" AnchorPane.rightAnchor="191.2">
+      <Label fx:id="labelFeedback" alignment="CENTER" layoutX="144.8" layoutY="375.0" prefHeight="17.0" prefWidth="268.0" style="-fx-text-fill: green;" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="144.8" AnchorPane.rightAnchor="144.8" />
+      <Hyperlink alignment="CENTER" layoutX="188.8" layoutY="405.0" onAction="#abrirTelaLogin" prefHeight="34.0" prefWidth="180.0" text="Fazer Login" AnchorPane.leftAnchor="188.8" AnchorPane.rightAnchor="188.8">
          <font>
             <Font size="16.0" />
          </font></Hyperlink>

@@ -2,6 +2,7 @@ package server;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.List;
 
 //interface do cliente
 public interface EmailInterface extends Remote {
@@ -11,5 +12,5 @@ public interface EmailInterface extends Remote {
 
 	public boolean enviarMensagem(String remetente, String destinatario,  String assunto, String conteudo) throws RemoteException;
 
-	public void receberNotificacao(String email, String conteudo , String assunto) throws RemoteException;
+	public List<Mensagem> receberNotificacao(String email) throws RemoteException;
 }

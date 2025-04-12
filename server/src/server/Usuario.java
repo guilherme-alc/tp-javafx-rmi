@@ -1,6 +1,7 @@
 package server;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 //usuário servidor
@@ -17,9 +18,12 @@ public class Usuario implements Serializable {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
+        mensagens = new ArrayList<>();
     }
 
-    public String getEmail() {
+    public Usuario() { }
+
+	public String getEmail() {
         return email;
     }
 

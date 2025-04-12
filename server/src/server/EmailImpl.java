@@ -3,6 +3,7 @@ package server;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.Reader;
@@ -25,6 +26,12 @@ public class EmailImpl extends UnicastRemoteObject implements EmailInterface {
 	public char cadastroEmail(String nome, String email, String senha) throws RemoteException {
 		Usuario novoUsuario = new Usuario(nome, email, senha);
 		try {
+		        File arquivo = new File(CAMINHO_ARQUIVO);
+		        
+		        if (!arquivo.exists()) {
+		            arquivo.createNewFile();
+		        }
+			
 				List<Usuario> usuarios = new ArrayList<>();
 				Gson gson = new Gson();
 				Type tipoLista = new TypeToken<List<Usuario>>() {}.getType();
@@ -130,9 +137,31 @@ public class EmailImpl extends UnicastRemoteObject implements EmailInterface {
 	}
 
 	@Override
-	public void receberNotificacao(String email, String conteudo, String assunto) throws RemoteException {
-		// TODO Auto-generated method stub
+	public List<Mensagem> receberNotificacao(String email) throws RemoteException {
 		
+		Usuario usuarioLogado = new Usuario();
+		List<Mensagem> mensagens = new ArrayList<>();
+		
+		Gson gson = new Gson();
+        Type tipoLista = new TypeToken<List<Usuario>>() {}.getType();
+        
+        try (Reader leitor = new FileReader("usuarios.json")) {
+            List<Usuario> usuarios = gson.fromJson(leitor, tipoLista);
+            
+            for (Usuario usuario : usuarios) {
+            	
+                if (usuario.getEmail().equalsIgnoreCase(email)) {
+                	usuarioLogado = usuario;
+                	break;
+                }
+            }
+            return usuarioLogado.mensagens;
+            
+        }catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        
+		return mensagens;
 	}
 
 }
