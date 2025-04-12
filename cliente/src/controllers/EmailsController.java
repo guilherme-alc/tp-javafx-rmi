@@ -45,6 +45,12 @@ public class EmailsController {
     	String assunto = campoAssunto.getText();
     	String conteudo = campoConteudo.getText();
     	
+        if (destinatario.isEmpty() || assunto.isEmpty() || conteudo.isEmpty()) {
+        	feedbackEnvio.setText("Preencha todos os campos!");
+        	feedbackEnvio.setStyle("-fx-text-fill: red;");
+            return;
+        }
+    	
     	try {
     		boolean sucesso = emailService.enviarMensagem(remetente, destinatario, assunto, conteudo);
     		
