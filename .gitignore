@@ -5,9 +5,6 @@
 .metadata/
 
 # Eclipse project files
-*.classpath
-*.project
-*.settings/
 
 # Build output
 bin/
