@@ -36,7 +36,7 @@ public class EmailsController {
     @FXML
     private TextArea campoMensagemRecebida;
     @FXML
-    private ListView listMensagensRecebidas;
+    private ListView<String> listMensagensRecebidas;
     
     private EmailInterface emailService;
     private Usuario usuario;

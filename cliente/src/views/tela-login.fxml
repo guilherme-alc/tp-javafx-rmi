@@ -33,7 +33,7 @@
             <font>
                <Font size="14.0" />
             </font></PasswordField>
-          <Button contentDisplay="CENTER" defaultButton="true" layoutX="190.4" layoutY="270.0" onAction="#fazerLogin" prefHeight="25.0" prefWidth="87.0" text="Entrar" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0">
+          <Button contentDisplay="CENTER" defaultButton="true" layoutX="190.4" layoutY="295.0" onAction="#fazerLogin" prefHeight="25.0" prefWidth="87.0" text="Entrar" AnchorPane.leftAnchor="190.4" AnchorPane.rightAnchor="190.39999999999998">
             <font>
                <Font size="16.0" />
             </font></Button>
@@ -42,8 +42,8 @@
                <Font name="System Bold" size="24.0" />
             </font>
          </Text>
-         <Label fx:id="labelFeedback" alignment="CENTER" layoutX="151.0" layoutY="338.0" prefHeight="23.0" prefWidth="255.0" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="152.0" />
-          <Hyperlink alignment="CENTER" layoutX="140.0" layoutY="317.0" onAction="#abrirTelaCadastro" prefHeight="34.0" prefWidth="278.0" text="Criar conta" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0">
+         <Label fx:id="labelFeedback" alignment="CENTER" layoutX="151.2" layoutY="388.0" prefHeight="23.0" prefWidth="255.0" AnchorPane.leftAnchor="151.2" AnchorPane.rightAnchor="152.0" />
+          <Hyperlink alignment="CENTER" layoutX="140.0" layoutY="342.0" onAction="#abrirTelaCadastro" prefHeight="34.0" prefWidth="278.0" text="Criar conta" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0">
             <font>
                <Font size="16.0" />
             </font></Hyperlink>
