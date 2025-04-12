@@ -9,7 +9,7 @@ public interface EmailInterface extends Remote {
 	
 	public Usuario fazerLogin(String email, String senha) throws RemoteException;
 
-	public void enviarMensagem(String email, String conteudo , String assunto) throws RemoteException;
+	public boolean enviarMensagem(String remetente, String destinatario,  String assunto, String conteudo) throws RemoteException;
 
 	public void receberNotificacao(String email, String conteudo , String assunto) throws RemoteException;
 }

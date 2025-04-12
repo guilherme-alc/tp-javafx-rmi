@@ -31,13 +31,15 @@ public class EmailImpl extends UnicastRemoteObject implements EmailInterface {
 				
 				try (Reader reader = new FileReader(CAMINHO_ARQUIVO)) {
 				    usuarios = gson.fromJson(reader, tipoLista);
-				    if (usuarios == null) usuarios = new ArrayList<>();
+				    
+				    if (usuarios == null) {
+				    	usuarios = new ArrayList<>();
+				    }
 				} catch (Exception e) {
-				
+					return 'e';
 				}
 				
-				boolean emailExiste = usuarios.stream()
-				        .anyMatch(u -> u.getEmail().equalsIgnoreCase(email));
+				boolean emailExiste = usuarios.stream().anyMatch(u -> u.getEmail().equalsIgnoreCase(email));
 				
 				if (emailExiste) {
 				    return 'j';
@@ -64,7 +66,10 @@ public class EmailImpl extends UnicastRemoteObject implements EmailInterface {
 
         try (Reader leitor = new FileReader("usuarios.json")) {
             List<Usuario> usuarios = gson.fromJson(leitor, tipoLista);
-            if (usuarios == null) return null;
+            
+            if (usuarios == null) {
+            	return null;
+            }
 
             for (Usuario usuario : usuarios) {
                 if (usuario.getEmail().equalsIgnoreCase(email.trim()) && usuario.getSenha().equals(senha)) {
@@ -79,9 +84,49 @@ public class EmailImpl extends UnicastRemoteObject implements EmailInterface {
 	}
 
 	@Override
-	public void enviarMensagem(String email, String conteudo, String assunto) throws RemoteException {
-		//Mensagem mensagem = new Mensagem (email, assunto, conteudo);
+	public boolean enviarMensagem(String remetente, String destinatario, String assunto, String conteudo) throws RemoteException {
+		Mensagem mensagem = new Mensagem (remetente, destinatario, assunto, conteudo);
 		
+		Gson gson = new Gson();
+        Type tipoLista = new TypeToken<List<Usuario>>() {}.getType();
+
+        try (Reader leitor = new FileReader("usuarios.json")) {
+            List<Usuario> usuarios = gson.fromJson(leitor, tipoLista);
+            
+            if (usuarios == null) {
+            	return false;
+            }
+            
+            boolean destinatarioExiste = false;
+
+            for (Usuario usuario : usuarios) {
+                if (usuario.getEmail().equalsIgnoreCase(destinatario.trim())) {
+                	
+                    if (usuario.mensagens == null) {
+                        usuario.mensagens = new ArrayList<>();
+                    }
+                    
+                    usuario.mensagens.add(mensagem);
+                    destinatarioExiste = true;
+                    break;	
+                }
+            }
+            
+            if(destinatarioExiste) {
+				try (FileWriter writer = new FileWriter(CAMINHO_ARQUIVO)) {
+				    gson.toJson(usuarios, writer);
+				    return true;
+				    
+				}catch(Exception ex) {
+					ex.printStackTrace();
+					return false;
+				}
+            }
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+		return false;
 	}
 
 	@Override

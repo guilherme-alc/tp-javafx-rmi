@@ -1,6 +1,7 @@
 package server;
 
 import java.io.Serializable;
+import java.util.List;
 
 //usuário cliente
 public class Usuario implements Serializable {
@@ -9,6 +10,7 @@ public class Usuario implements Serializable {
     public String nome;
     public String email;
     public String senha;
+    public List<Mensagem> mensagens;
 
     public Usuario(String nome, String email, String senha) {
         this.nome = nome;
